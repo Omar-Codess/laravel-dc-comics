@@ -2,6 +2,9 @@
 @section('content')
     <div class="container">
         <h2>Lista dei fumetti</h2>
+        <div class="text-end">
+            <a class="btn btn-success" href="{{ route('comics.create') }}">Crea un nuovo fumetto</a>
+        </div>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -19,6 +22,7 @@
                         <td>{{ $comic->type }}</td>
                         <td>
                             <a class="btn btn-primary" href="{{ route('comics.show', $comic->id) }}">Dettagli</a>
+                            <a class="btn btn-warning" href="{{ route('comics.edit', $comic->id) }}">Modifica</a>
                         </td>
                     </tr>
                 @endforeach
